@@ -9,7 +9,7 @@ using Xamarin.Forms;
 [assembly: Dependency(typeof(authentication.WinPhone.Authentication))]
 namespace authentication.WinPhone
 {
-	class Authentication
+	public sealed partial class Authentication: IAuthenticator
 	{
 		public async Task<MobileServiceClient> AuthenticateFB()
 		{

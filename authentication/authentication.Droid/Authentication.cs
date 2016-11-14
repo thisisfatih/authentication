@@ -11,8 +11,14 @@ using Android.Views;
 using Android.Widget;
 
 using Microsoft.WindowsAzure.MobileServices;
+using authentication.Droid;
+using System.Threading.Tasks;
+using System.Net.Http;
+using Xamarin.Forms;
 
-[assembly: Xamarin.Forms.Dependency(typeof(authentication.Droid.Authentication))]
+using authentication;
+
+[assembly: Dependency(typeof(authentication.Droid.Authentication))]
 
 namespace authentication.Droid
 {
@@ -26,6 +32,7 @@ namespace authentication.Droid
 				await (msc)
 					.LoginAsync(Forms.Context, MobileServiceAuthenticationProvider.Facebook,
 					new Dictionary<string, string>() { { "access_type", "offline" } });
+				
 				return msc;
 			}
 			catch (Exception e)
