@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,11 @@ namespace authentication
 {
 	public class App : Application
 	{
+		public static MobileServiceClient mscASPNET { get; set; }
+
 		public App()
 		{
+			
 			// The root page of your application
 			var content = new ContentPage
 			{
